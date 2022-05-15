@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Film Projesi</title>
+		<meta charset="utf-8" />
+		<script src="angular.min.js"></script>
+        <script src="angular-route.js"></script>
+		<script src="ng.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;                
+            }
+        </style>
+	</head>
+	<body ng-app="movies" class="d-flex flex-column min-vh-100">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" ng-controller="navCtrl">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Film Projesi</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link active">AnaSayfa</a>
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                        <ul class="nav navbar-nav">
+                            <li ng-hide="loggedIn" ng-click="isLoggedIn()">
+                                <a href="#!login" class="nav-item nav-link">Giriş</a>
+                            </li>
+                            <li ng-show="loggedIn" ng-click="logOut(); isLoggedIn()">
+                                <a href="#" class="nav-item nav-link">Oturumu Kapat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div ng-view></div>
+        
+        <footer class="footer mt-auto py-3 bg-primary">
+            <div class="container">
+                <span class="text-white">Rabia Nur DELEN.</span>
+            </div>
+        </footer>
+	</body>
+</html>

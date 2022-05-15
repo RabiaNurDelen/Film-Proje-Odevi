@@ -1,0 +1,57 @@
+﻿<div class="container mt-4 mb-4">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-3 mb-4">
+			<div class="list-group">
+				<a 
+					class="list-group-item list-group-item-action" 
+                    role="button"
+					ng-class="{ active:selectedCategory == 0 }" 
+					ng-click="changeCategory()"
+					>Tüm kategoriler</a>
+				<a 
+					ng-repeat="category in categories" 
+					class="list-group-item list-group-item-action" 
+                    role="button"
+					ng-class="{ active:selectedCategory == category.id }" 
+					ng-click="changeCategory( category )" 
+					>{{ category.name }}</a>
+			</div>
+            <br />
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;" ng-if="userid > 0">Yeni Kategori</button>
+            <button class="btn btn-primary" style="width: 100%;" ng-if="userid > 0">Yeni Film</button>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-9">
+			<h2 ng-if="selectedCategory">{{ categoryTitle }}</h2>    
+			<div class="row row-cols-1 row-cols-md-2 g-2">
+				<div class="card border-0" ng-repeat="item in movies">
+					<div class="row">
+						<div class="col-md-4">
+							<img src="{{ item.imageUrl }}" class="img-fluid" alt="" role="button"/>
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title text-truncate" role="button">{{ item.title }}</h5>
+								<!--
+                                <p class="card-text d-none d-lg-block" style="line-height: 1.5em; height: 9em; overflow: hidden; font-size: 12px; text-align: justify;" role="button">
+									{{ item.description }}
+                                </p>
+                                    -->
+                                <span style="font-size: 11px;" role="button">
+                                    {{ item.lang_suntitle }} 
+                                </span><br />
+                                <span style="font-size: 11px;" role="button">
+                                    {{ item.categoryName }} Filmleri</span><br />
+                                <span style="font-size: 11px;" role="button">
+                                    {{ item.date }}</span><br />
+								<a class="btn ntn-sm btn-primary mt-2" href="#!detail/{{item.id}}">Filmi İzle</a>
+							</div>
+						</div>
+					</div>  
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+        
+       

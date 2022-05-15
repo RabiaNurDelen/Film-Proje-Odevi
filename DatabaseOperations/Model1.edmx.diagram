@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b43accba62b24feea1f480d3028e1abc" Name="Diagram1">
+        <EntityTypeShape EntityType="moviesModel.categories" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="moviesModel.movies" Width="1.5" PointX="3.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="moviesModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="moviesModel.FK_movies_categories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="moviesModel.movieList" Width="1.5" PointX="6.75" PointY="1" />
+        <EntityTypeShape EntityType="moviesModel.users" Width="1.5" PointX="3.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
